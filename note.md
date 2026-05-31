@@ -94,6 +94,8 @@ Explanation: Copy the IP address of X-Originating-Ip listed in the message sourc
 
 ### Q4: Continue analyzing the email message source. Which mail server generated the Authentication-Results header?
 
+![image](images/grep.png)
+
 Answer: atlas102.free.mail.gq1.yahoo.com <br>
 Explanation: 
 
