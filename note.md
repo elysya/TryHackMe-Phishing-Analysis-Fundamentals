@@ -2,8 +2,6 @@
 
 ## Task 2: The Email Address
 
-![image](images/subject.png)
-
 ### Q1: Identify the domain used in the following email address: hatsalesman@tryhatme.com <br>
 
 Answer: tryhatme.com <br>
