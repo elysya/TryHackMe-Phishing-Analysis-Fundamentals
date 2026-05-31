@@ -44,44 +44,60 @@ Explanation: The raw message source window of email1.eml shows the full email me
 
 ## Task 5: Email Body
 
+![image](images/2.png)
+
 ### Q1: Open up the email2.txt file to view the source of an attachment. What is the Content-Type of the attachment?
 
 Answer: application/pdf <br>
-Explanation:
-1. 
+Explanation: Looking at the top lines of the open text file window for email2.txt, the metadata clearly lists Content-Type: application/pdf on the second line.
 
 ### Q2: What is the name of the attachment from the previous question?
 
 Answer: zmqpalgh.pdf <br>
-Explanation:
+Explanation: In the same text window for email2.txt, the file headers include a filename= parameter on both the second and fourth lines. Reading the text inside the quotation marks explicitly reveals the name as zmqpalgh.pdf.
 
 ### Q3: Decode the base64 string using either a PDF converter (opens in new tab) or CyberChef (opens in new tab). What is the hidden flag value?
 
 Answer: THM{BENIGN_PDF_ATTACHMENT} <br>
 Explanation:
+
+![image](images/downloadcchef.png)
+![image](images/pdf.png)
+
 1. Open email2.txt and copy the large block of alphanumeric characters representing the Base64 payload.
-2. Paste the text block into CyberChef and add the From Base4 recipe.
+2. Paste the text block into the input section of CyberChef and add the From Base4 recipe.
 3. Click the disk icon to download the decoded output, manually naming the file test.pdf.
-4. Open the pdf file and found the flag.
+4. Open the PDF file to find the printed flag.
 
 ## Task 6: Type of Phishing
+
+![image](images/3.png)
 
 ### Q1: Which reputable organization is being spoofed in this phishing attempt?
 
 Answer: Home Depot <br>
-Explanation: View it in the email client. Look for brand impersonation tactics such as copied logos, specific corporate colors, or text designed to mimic a legitimate organization.
+Explanation: Looking at the email header in email3.eml, the display name in the From field explicitly says "Thank you! Home Depot", showing that the attacker is trying to impersonate the Home Depot brand.
 
 ### Q2: What is the sender's email address?
 
 Answer: support@teckbe.com <br>
-Explanation: raw address found in the header
+Explanation: In email3.eml, looking past the fake display name in the From header reveals the actual email address, support@teckbe.com, hidden inside the angle brackets < >.
 
 ### Q3: Inspect the email message source. What is the defanged (opens in new tab) X-Originating-IP?
 
+![image](images/sds.png)
+
 Answer: 103[.]234[.]236[.]83 <br>
-Explanation: Copy the IP address then decode it using defange IP in CyberChef.
+Explanation: Copy the IP address of X-Originating-Ip listed in the message source for email3.eml and decode it using the Defang IP Address recipe in CyberChef.
 
 ### Q4: Continue analyzing the email message source. Which mail server generated the Authentication-Results header?
 
 Answer: atlas102.free.mail.gq1.yahoo.com <br>
-Explanation: Identify the receiving mail server domain listed immediately after the header prefix
+Explanation: 
+
+```
+grep -i "Authentication-Results" email3.eml
+```
+
+The output directly displays the mail server responsible for generating the authentication results right after the header label.
+
