@@ -2,6 +2,8 @@
 
 ## Task 2: The Email Address
 
+![image](images/subject.png)
+
 ### Q1: Identify the domain used in the following email address: hatsalesman@tryhatme.com <br>
 
 Answer: tryhatme.com <br>
@@ -83,9 +85,9 @@ Explanation: Looking at the email header in email3.eml, the display name in the 
 Answer: support@teckbe.com <br>
 Explanation: In email3.eml, looking past the fake display name in the From header reveals the actual email address, support@teckbe.com, hidden inside the angle brackets < >.
 
-### Q3: Inspect the email message source. What is the defanged (opens in new tab) X-Originating-IP?
+### Q3: Inspect the email message source. What is the defanged X-Originating-IP?
 
-![image](images/sds.png)
+![image](images/kk.png)
 
 Answer: 103[.]234[.]236[.]83 <br>
 Explanation: Copy the IP address of X-Originating-Ip listed in the message source for email3.eml and decode it using the Defang IP Address recipe in CyberChef.
