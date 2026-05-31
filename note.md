@@ -28,6 +28,8 @@ Explanation: The text highlights that IMAP stores emails directly on the server 
 
 ## Task 4: Email Headers
 
+![image](images/subject.png)
+
 ### Q1: What is the full subject line of email1.eml?
 
 Answer: Help protect your budget by protecting your home <br>
