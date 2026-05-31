@@ -31,17 +31,15 @@ Explanation: The text highlights that IMAP stores emails directly on the server 
 ### Q1: What is the full subject line of email1.eml?
 
 Answer: Help protect your budget by protecting your home <br>
-Explanation:
+Explanation: By looking at the provided screenshot of the email client headers, item 4 points directly to the Subject field. The full text written inside that highlighted box is "Help protect your budget by protecting your home".
 
 ### Q2: View the message source of email1.eml using Thunderbird in your VM. What the IP address listed as the X-Originating-Ip?
 
-Answer: 43.255.56.161 <br>
-Explanation: <br>
-1. Run the following command in the terminal to pull the specific originating IP metadata: <br>
+![image](images/1inspect.png)
 
-```
- grep -i "X-Originating-IP:" email1.eml
-```
+Answer: 43.255.56.161 <br>
+Explanation: The raw message source window of email1.eml shows the full email metadata headers. Scanning down to the fourth line of the text block reveals the X-Originating-Ip: header, which explicitly lists the IP address inside the brackets as 43.255.56.161.
+
 2. Extract the raw numerical IP address listed on that line.
 
 ## Task 5: Email Body
